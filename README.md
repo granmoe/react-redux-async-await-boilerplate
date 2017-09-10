@@ -1,4 +1,4 @@
-# React, Emotion, Redux-Little-Router, Redux, Redux Saga, Immutable, Babel/ES7, Webpack HMR boilerplate
+# React, Redux (thunk), Redux-Little-Router, Async/Await, Styled Components, Babel/ES7, Webpack HMR boilerplate
 
 ## Features
 * Webpack Hot Module Reloading (HMR)
