@@ -11,9 +11,9 @@ export default function reducer (currentState = initialState, action) {
 
 export const increment = () => ({ type: INCREMENT })
 
-export const incrementAsync = async dispatch => {
-  dispatch({ type: INCREMENT_ASYNC })
+export const incrementAsync = () => async dispatch => {
+  await new Promise(resolve => setTimeout(_ => resolve(), 1000))
+  dispatch(increment())
 }
 
-const INCREMENT_ASYNC = 'increment-requested'
 const INCREMENT = 'increment'
