@@ -17,11 +17,7 @@
         "arrow-parens": [0, "as-needed"],
         "comma-dangle": 0,
         "no-console": 1,
-        "no-cond-assign": 0,
-        "no-func-assign": 0,
         "operator-linebreak": 0,
-        "generator-star-spacing": ["error", {"before": false, "after": true}],
-        "yield-star-spacing": ["error", {"before": false, "after": true}],
         "quote-props": [2, "as-needed", {
             "unnecessary": false
         }],

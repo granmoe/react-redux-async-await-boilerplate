@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import styled from 'emotion/react'
+import styled from 'styled-components'
 
-import { requestIncrement } from 'ducks/count'
+import { incrementAsync } from 'ducks/count'
 
 const CounterWrapper = styled.div`
   display: flex;
@@ -25,15 +25,15 @@ const CounterButton = styled.button`
 class Counter extends Component {
   static propTypes = {
     count: PropTypes.number.isRequired,
-    requestIncrement: PropTypes.func.isRequired
+    incrementAsync: PropTypes.func.isRequired
   }
 
   render () {
-    const { count, requestIncrement } = this.props
+    const { count, incrementAsync } = this.props
 
     return (
       <CounterWrapper>
-        <CounterButton onClick={ requestIncrement }>increment async</CounterButton>
+        <CounterButton onClick={ incrementAsync }>increment async</CounterButton>
         <Count> Count: { count }</Count>
       </CounterWrapper>
     )
@@ -42,5 +42,5 @@ class Counter extends Component {
 
 export default connect(
   state => ({ count: state.count }),
-  { requestIncrement }
+  { incrementAsync }
 )(Counter)

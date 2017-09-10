@@ -1,8 +1,7 @@
 {
   "env": {
     "production": {
-      "presets": [["es2015", { "modules": false }], "react", "stage-1"],
-      "plugins": ["emotion/babel"]
+      "presets": [["es2015", { "modules": false }], "react", "stage-2"]
     },
     "test": {
       "presets": [
@@ -12,9 +11,9 @@
           }
         }],
         "react",
-        "stage-1"
+        "stage-2"
       ],
-      "plugins": ["emotion/babel", "babel-plugin-transform-es2015-parameters", "babel-plugin-transform-es2015-destructuring"]
+      "plugins": ["babel-plugin-transform-es2015-parameters", "babel-plugin-transform-es2015-destructuring"]
     },
     "development": {
       "presets": [
@@ -25,9 +24,9 @@
         }],
         "react-hmre",
         "react",
-        "stage-1"
+        "stage-2"
       ],
-      "plugins": ["emotion/babel", "babel-plugin-transform-es2015-parameters", "babel-plugin-transform-es2015-destructuring"]
+      "plugins": ["babel-plugin-transform-es2015-parameters", "babel-plugin-transform-es2015-destructuring"]
     }
   }
 }
