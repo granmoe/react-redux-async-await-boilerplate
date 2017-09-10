@@ -13,7 +13,7 @@
         "react",
         "stage-2"
       ],
-      "plugins": ["babel-plugin-transform-es2015-parameters", "babel-plugin-transform-es2015-destructuring"]
+      "plugins": ["syntax-async-functions", "transform-async-to-generator", "babel-plugin-transform-es2015-parameters", "babel-plugin-transform-es2015-destructuring"]
     },
     "development": {
       "presets": [
@@ -26,7 +26,7 @@
         "react",
         "stage-2"
       ],
-      "plugins": ["babel-plugin-transform-es2015-parameters", "babel-plugin-transform-es2015-destructuring"]
+      "plugins": ["syntax-async-functions", "transform-async-to-generator", "babel-plugin-transform-es2015-parameters", "babel-plugin-transform-es2015-destructuring"]
     }
   }
 }
