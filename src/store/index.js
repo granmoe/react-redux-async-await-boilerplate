@@ -1,11 +1,9 @@
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
-import createSagaMiddleware from 'redux-saga'
+import thunk from 'store/thunk'
 import { routerForBrowser } from 'redux-little-router'
-import { Iterable } from 'immutable'
-import reducers, { rootSaga } from 'ducks'
+import * as reducers from 'ducks'
 
 export default function () {
-  // any data to attach to the router key of state when we're on this route
   const routes = {
     '/react-redux-async-await-boilerplate': {
       '/counter': {
@@ -21,13 +19,12 @@ export default function () {
     middleware: routerMiddleware,
     enhancer
   } = routerForBrowser({ routes })
-  const sagaMiddleware = createSagaMiddleware()
-  let middlewares = [routerMiddleware, sagaMiddleware]
+
+  let middlewares = [thunk, routerMiddleware]
 
   if (process.env.NODE_ENV === `development`) {
     const createLogger = require('redux-logger')
-    const stateTransformer = state => Iterable.isIterable(state) ? state.toJS() : state
-    const logger = createLogger({ stateTransformer, collapsed: _ => true })
+    const logger = createLogger({ collapsed: _ => true })
     middlewares.push(logger)
   }
 
@@ -41,13 +38,5 @@ export default function () {
     compose(enhancer, applyMiddleware(...middlewares))
   )
 
-  sagaMiddleware.run(rootSaga)
-
   return store
 }
-
-  // redux-little-router isn't compatible with immutable yet :-(
-  // const rootReducer = (state, action) => Object.entries(allReducers)
-  //   .reduce((state, [ name, reducer ]) =>
-  //     state.set(name, reducer(state.get(name), action))
-  //   , state)
