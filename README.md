@@ -5,6 +5,7 @@
 * Styled Components
 * Redux Little Router
 * Stage 2
+* fix proptypes import
 * "Ducks" pattern for redux logic
 * Webpack Hot Module Reloading (HMR)
 * Optional Webpack Dashboard for useful terminal output while developing

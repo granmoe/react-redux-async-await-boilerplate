@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PureComponent, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 
@@ -22,7 +22,7 @@ const CounterButton = styled.button`
   padding: 5px;
 `
 
-class Counter extends Component {
+class Counter extends PureComponent {
   static propTypes = {
     count: PropTypes.number.isRequired,
     incrementAsync: PropTypes.func.isRequired
@@ -41,6 +41,6 @@ class Counter extends Component {
 }
 
 export default connect(
-  state => ({ count: state.count }),
+  ({ count }) => ({ count }),
   { incrementAsync }
 )(Counter)
