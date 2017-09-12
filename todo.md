@@ -1,6 +1,5 @@
 # TODO
-* fix proptypes import
-* redo tests, prob put them inline with their files
+* add tests
 * add husky and git hooks
 * cleanup babelrc (env)
 * cleanup webpack (todos left in there...check HMR config)
