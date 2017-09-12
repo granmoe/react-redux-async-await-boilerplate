@@ -83,6 +83,7 @@
     "husky": "^0.14.3",
     "imagemin-webpack-plugin": "^1.2.1",
     "jest": "^17.0.3",
+    "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.2.1",
     "react-json-tree": "^0.10.0",
