@@ -93,6 +93,7 @@ module.exports = {
     compress: false,
     inline: true,
     hot: true,
+    open: true,
     stats: {
       assets: true,
       children: false,
