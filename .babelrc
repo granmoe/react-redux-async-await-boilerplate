@@ -1,7 +1,15 @@
 {
   "env": {
     "production": {
-      "presets": [["es2015", { "modules": false }], "react", "stage-2"]
+      "presets": [
+        ["env", {
+          "targets": {
+            "browsers": "last 4 versions"
+          }
+        }],
+        "react",
+        "stage-2"
+      ]
     },
     "test": {
       "presets": [
@@ -18,14 +26,13 @@
       "presets": [
         ["env", {
           "targets": {
-            "chrome": 60
+            "browsers": "last 2 versions"
           }
         }],
         "react-hmre",
         "react",
         "stage-2"
-      ],
-      "plugins": ["syntax-async-functions", "transform-async-to-generator", "transform-es2015-parameters", "transform-es2015-destructuring"]
+      ]
     }
   }
 }
