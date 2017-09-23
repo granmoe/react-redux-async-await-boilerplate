@@ -1,25 +1,12 @@
-// TODO: Update this and switch to inline test files
-
 /* global describe, it, expect */
-// import { delay } from 'redux-saga'
-// import { call, put } from 'redux-saga/effects'
+import initStore from 'store'
+import { incrementAsync } from 'ducks/count'
 
-// import { increment, incrementAsync } from 'ducks/count'
+const store = initStore()
 
-// const SEP = '\n      '
-// const done = { done: true, value: undefined }
-
-// describe('incrementAsync', () => {
-//   const steps = [
-//     '1) calls delay(1000)',
-//     '2) puts increment()'
-//   ]
-
-//   it(steps.join(SEP), () => {
-//     const saga = incrementAsync()
-
-//     expect(saga.next().value).toEqual(call(delay, 1000))
-//     expect(saga.next().value).toEqual(put(increment()))
-//     expect(saga.next()).toEqual(done)
-//   })
-// })
+describe('incrementAsync', () => {
+  it('dispatches the increment action after one second', async () => {
+    await store.dispatch(incrementAsync())
+    expect(store.getState()).toEqual({ count: 1 })
+  })
+})
