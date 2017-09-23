@@ -11,6 +11,6 @@
 * Compatible with Windows or Mac development environments thanks to cross-env
 
 ## Installation
-* clone
+* clone the repo
 * npm install
 * npm start to run dev server
