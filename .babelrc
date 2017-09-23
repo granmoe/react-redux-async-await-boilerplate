@@ -7,13 +7,12 @@
       "presets": [
         ["env", {
           "targets": {
-            "chrome": 60
+            "node": "current"
           }
         }],
         "react",
         "stage-2"
-      ],
-      "plugins": ["syntax-async-functions", "transform-async-to-generator", "transform-es2015-parameters", "transform-es2015-destructuring", "transform-object-rest-spread"]
+      ]
     },
     "development": {
       "presets": [
