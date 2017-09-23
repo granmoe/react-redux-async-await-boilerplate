@@ -32,12 +32,16 @@
     "redux-little-router",
     "async-await",
     "webpack",
+    "webpack 2",
     "babel",
     "es6",
     "es7",
     "styled-components",
     "boilerplate",
-    "template"
+    "template",
+    "eslint",
+    "jest",
+    "tests"
   ],
   "devDependencies": {
     "babel-eslint": "^6.1.2",
