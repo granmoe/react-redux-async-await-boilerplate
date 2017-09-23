@@ -4,7 +4,6 @@
 * Async/await
 * Styled Components
 * Redux Little Router
-* Stage 2
 * "Ducks" pattern for redux logic
 * Webpack Hot Module Reloading (HMR)
 * Optional Webpack Dashboard for useful terminal output while developing
@@ -12,7 +11,6 @@
 * Compatible with Windows or Mac development environments thanks to cross-env
 
 ## Installation
-* Clone
+* clone
 * npm install
-
-## Note: this isn't 100% finished, but it's very close
+* npm start to run dev server
