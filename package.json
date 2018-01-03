@@ -80,8 +80,6 @@
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
     "redux-little-router": "^14.2.3",
-    "redux-saga": "^0.16.0",
-    "redux-saga-tester": "^1.0.378",
     "style-loader": "^0.18.2",
     "styled-components": "^2.4.0",
     "webpack": "^3.10.0",
