@@ -12,8 +12,6 @@ module.exports = {
       'redux',
       'redux-devtools-extension',
       'redux-little-router',
-      'redux-saga',
-      'redux-saga-tester',
       'styled-components',
       'whatwg-fetch'
     ]
