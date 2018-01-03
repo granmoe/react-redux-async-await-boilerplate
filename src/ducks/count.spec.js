@@ -7,7 +7,7 @@ const store = initStore()
 const initialState = store.getState()
 
 describe('incrementAsync', () => {
-  it('Asyncronously increments the counter', async () => {
+  it('Asynchronously increments the counter', async () => {
     await store.dispatch(incrementAsync())
     expect(store.getState()).toEqual({ ...initialState, count: initialState.count + 1 })
   })
