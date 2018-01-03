@@ -4,18 +4,11 @@ import { incrementAsync } from 'ducks/count'
 
 const store = initStore()
 
-const initialState = {
-  count: 0,
-  router: {
-    pathname: 'blank',
-    query: {},
-    search: ''
-  }
-}
+const initialState = store.getState()
 
 describe('incrementAsync', () => {
-  it('dispatches the increment action after one second', async () => {
+  it('Asyncronously increments the counter', async () => {
     await store.dispatch(incrementAsync())
-    expect(store.getState()).toEqual({ ...initialState, count: 1 })
+    expect(store.getState()).toEqual({ ...initialState, count: initialState.count + 1 })
   })
 })

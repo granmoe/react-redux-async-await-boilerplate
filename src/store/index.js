@@ -1,4 +1,5 @@
-import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
+import { applyMiddleware, combineReducers, createStore } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'store/thunk'
 import { routerForBrowser } from 'redux-little-router'
 import * as reducers from 'ducks'
@@ -20,13 +21,7 @@ export default function () {
     enhancer
   } = routerForBrowser({ routes })
 
-  let middlewares = [thunk, routerMiddleware]
-
-  if (process.env.NODE_ENV === `development`) {
-    const createLogger = require('redux-logger')
-    const logger = createLogger({ collapsed: _ => true })
-    middlewares.push(logger)
-  }
+  const middlewares = [thunk, routerMiddleware]
 
   const allReducers = {
     ...reducers,
@@ -35,7 +30,7 @@ export default function () {
 
   const store = createStore(
     combineReducers(allReducers),
-    compose(enhancer, applyMiddleware(...middlewares))
+    composeWithDevTools(enhancer, applyMiddleware(...middlewares))
   )
 
   return store
