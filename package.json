@@ -14,15 +14,24 @@
     "url": "https://github.com/granmoe/react-redux-async-await-boilerplate/issues"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=development BABEL_ENV=development ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "start": "npm run build:dll && cross-env NODE_ENV=development BABEL_ENV=development ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "start:dash": "cross-env NODE_ENV=development BABEL_ENV=development webpack-dashboard -- ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "build": "cross-env NODE_ENV=production BABEL_ENV=production webpack",
-    "test": "NODE_ENV=test jest --verbose"
+    "build:dll": "webpack --config dll.webpack.config.js",
+    "test": "NODE_ENV=test jest --verbose",
+    "test:watch": "NODE_ENV=test jest --verbose --watch"
   },
   "jest": {
     "moduleDirectories": [
       "node_modules",
       "src"
+    ],
+    "moduleNameMapper": {
+      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/mock/fileMock.js",
+      ".*\\.(css|less)$": "identity-obj-proxy"
+    },
+    "setupFiles": [
+      "<rootDir>/test/setupTests.js"
     ]
   },
   "keywords": [
@@ -44,16 +53,17 @@
     "tests"
   ],
   "devDependencies": {
-    "babel-eslint": "^6.1.2",
-    "babel-loader": "^6.2.5",
-    "babel-polyfill": "^6.13.0",
-    "babel-preset-env": "0.0.8",
-    "babel-preset-es2015": "^6.14.0",
-    "babel-preset-react": "^6.11.1",
+    "babel-eslint": "^8.1.2",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "babel-preset-react-hmre": "^1.1.1",
-    "babel-preset-stage-2": "^6.16.0",
-    "cross-env": "^5.0.5",
+    "babel-preset-stage-2": "^6.24.1",
+    "cross-env": "^5.1.3",
     "css-loader": "^0.28.4",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^3.1.1",
     "eslint-config-standard": "^5.3.5",
     "eslint-plugin-promise": "^2.0.1",
@@ -61,21 +71,20 @@
     "eslint-plugin-standard": "^2.0.0",
     "husky": "^0.14.3",
     "imagemin-webpack-plugin": "^1.2.1",
-    "jest": "^17.0.3",
-    "prop-types": "^15.5.10",
-    "react": "^15.6.1",
-    "react-dom": "^15.2.1",
-    "react-json-tree": "^0.10.0",
-    "react-redux": "^4.4.5",
-    "react-router": "4.0.0-2",
-    "redux": "^3.5.2",
-    "redux-little-router": "^13.1.3",
-    "redux-logger": "^2.6.1",
+    "jest": "^22.0.4",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-json-tree": "^0.11.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-little-router": "^14.2.3",
     "style-loader": "^0.18.2",
-    "styled-components": "^2.1.2",
-    "webpack": "^2.1.0-beta.27",
-    "webpack-dashboard": "^0.2.0",
-    "webpack-dev-server": "^2.1.0-beta.10",
+    "styled-components": "^2.4.0",
+    "webpack": "^3.10.0",
+    "webpack-dashboard": "^1.0.2",
+    "webpack-dev-server": "^2.9.7",
     "whatwg-fetch": "^1.0.0"
   }
 }
